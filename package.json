@@ -1,22 +1,27 @@
 {
-  "name": "profileperf",
+  "name": "testperf",
   "version": "1.0.0",
-  "description": "An easy speed test for JavaScript.",
+  "description": "An easy speed/perf test for JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanpcmcquen/profileperf.git"
+    "url": "git+https://github.com/ryanpcmcquen/testperf.git"
   },
   "keywords": [
-    "speedtest"
+    "speedtest",
+    "speed",
+    "test",
+    "perf",
+    "perftest",
+    "testperf"
   ],
   "author": "Ryan P.C. McQuen",
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/ryanpcmcquen/profileperf/issues"
+    "url": "https://github.com/ryanpcmcquen/testperf/issues"
   },
-  "homepage": "https://github.com/ryanpcmcquen/profileperf#readme"
+  "homepage": "https://github.com/ryanpcmcquen/testperf#readme"
 }
