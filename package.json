@@ -1,6 +1,6 @@
 {
   "name": "testperf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An easy speed/perf test for JavaScript.",
   "main": "index.js",
   "scripts": {

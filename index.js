@@ -1,4 +1,4 @@
-/*! testperf v1.0.0 by ryanpcmcquen */
+/*! testperf v1.0.1 by ryanpcmcquen */
 
 /*global module*/
 /*jshint esversion:6*/
