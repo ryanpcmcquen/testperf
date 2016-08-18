@@ -1,4 +1,4 @@
-/*! testperf v2.0.1 by ryanpcmcquen */
+/*! testperf v2.0.2 by ryanpcmcquen */
 // @flow
 'use strict';
 let now;
@@ -9,7 +9,7 @@ try {
   }) &&
   (timediff = (start, end) => {
     // This one makes sense to me.
-    return end - start;
+    return (end - start);
   });
 } catch (ignore) {
   now = () => {
@@ -35,7 +35,7 @@ const testPerf = function (name /*:String*/ , fn /*:Function*/ ) {
   });
   const end = now();
   // Use commas to avoid confusing type inference.
-  console.log('// =>', name, 'took:', (timediff), 'milliseconds.');
+  console.log('// =>', name, 'took:', (timediff(start, end)), 'milliseconds.');
 };
 
 module.exports = testPerf;
