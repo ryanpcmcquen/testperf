@@ -1,19 +1,27 @@
-/*! testperf v1.1.0 by ryanpcmcquen */
+/*! testperf v2.0.0 by ryanpcmcquen */
+// @flow
 
-/*global module*/
-/*jshint esversion:6*/
+let now;
+try {
+  (performance) && (now = () => performance.now());
+} catch (ignore) {
+  now = () => {
+    const t = process.hrtime();
+    return (t[0] * 1e3 + t[1]) / 1e6;
+  };
+}
 
-const testPerf = function (name, fn) {
+const testPerf = function (name /*:String*/ , fn /*:Function*/ ) {
   const args = Array.prototype.slice.call(arguments, 2);
   const i = [];
   i.length = 500500;
   i.fill(0);
-  const start = performance.now();
+  const start = now();
   i.map(() => {
     fn.apply(fn, args);
   });
-  const end = performance.now();
-  console.log(name + " took: " + (end - start) + " milliseconds.");
+  const end = now();
+  console.log(name, 'took:', (end - start), 'milliseconds.');
 };
 
 module.exports = testPerf;
