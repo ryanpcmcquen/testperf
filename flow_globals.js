@@ -1,1 +1,2 @@
-declare var performance :Object;
+declare
+var performance: Object;

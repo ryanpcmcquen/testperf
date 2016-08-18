@@ -1,12 +1,16 @@
 /*! testperf v2.0.0 by ryanpcmcquen */
 // @flow
-
+'use strict';
 let now;
 try {
-  (performance) && (now = () => performance.now());
+  (performance) && (now = () => {
+    return performance.now()
+  });
 } catch (ignore) {
   now = () => {
     const t = process.hrtime();
+    // Format `process.hrtime()` to match
+    // `performance.now()`.
     return (t[0] * 1e3 + t[1]) / 1e6;
   };
 }
@@ -21,7 +25,8 @@ const testPerf = function (name /*:String*/ , fn /*:Function*/ ) {
     fn.apply(fn, args);
   });
   const end = now();
-  console.log(name, 'took:', (end - start), 'milliseconds.');
+  // Use commas to avoid confusing type inference.
+  console.log('// =>', name, 'took:', (end - start), 'milliseconds.');
 };
 
 module.exports = testPerf;
