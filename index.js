@@ -1,10 +1,15 @@
-/*! testperf v2.0.0 by ryanpcmcquen */
+/*! testperf v2.0.1 by ryanpcmcquen */
 // @flow
 'use strict';
 let now;
+let timediff;
 try {
   (performance) && (now = () => {
     return performance.now()
+  }) &&
+  (timediff = (start, end) => {
+    // This one makes sense to me.
+    return end - start;
   });
 } catch (ignore) {
   now = () => {
@@ -12,6 +17,10 @@ try {
     // Format `process.hrtime()` to match
     // `performance.now()`.
     return (t[0] * 1e3 + t[1]) / 1e6;
+  };
+  timediff = (start, end) => {
+    // This one is a bit peculiar ...
+    return start - end;
   };
 }
 
@@ -26,7 +35,7 @@ const testPerf = function (name /*:String*/ , fn /*:Function*/ ) {
   });
   const end = now();
   // Use commas to avoid confusing type inference.
-  console.log('// =>', name, 'took:', (end - start), 'milliseconds.');
+  console.log('// =>', name, 'took:', (timediff), 'milliseconds.');
 };
 
 module.exports = testPerf;
