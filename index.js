@@ -11,10 +11,10 @@ try {
     return (diff) ? process.hrtime(diff) : process.hrtime();
   };
 }
-const timediff = (end, start) => {
+const timediff = (end /*:any*/ , start) => {
   // Format `process.hrtime()` to match
-  // `performance.now()`.
-  return (start) ? (end - start) : ((end[0] * 1e3 + end[1]) / 1e6);
+  // `performance.now()` (milliseconds).
+  return (typeof start === 'number') ? (end - start) : ((end[0] * 1e3) + (end[1] / 1e6));
 };
 
 const testPerf = function (name /*:String*/ , fn /*:Function*/ ) {
