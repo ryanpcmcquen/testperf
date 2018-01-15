@@ -1,11 +1,11 @@
 {
     "name": "testperf",
-    "version": "2.0.6",
+    "version": "2.0.7",
     "description": "An easy speed/perf test for JavaScript.",
     "main": "index.js",
     "scripts": {
         "prettier":
-            "npx prettier --config .prettierrc.json --write \"{,!(.git|build|*dist|node_modules|styleguide|test-build)/**/}*.{css,html,js,json,jsx,less,sass,scss,md}\"",
+            "npx prettier --config .prettierrc.json --write \"{,!(.git|*build|*dist|node_modules|styleguide)/**/}*.{css,html,js,json,jsx,less,md,sass,scss}\"",
         "test": "node test.js"
     },
     "repository": {

@@ -1,4 +1,4 @@
-/*! testperf v2.0.6 by ryanpcmcquen */
+/*! testperf v2.0.7 by ryanpcmcquen */
 // @flow
 "use strict"
 let now
