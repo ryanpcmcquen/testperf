@@ -9,9 +9,7 @@ Example:
 ```javascript
 const flatMap = require("flatmap-fast")
 
-testPerf("flatMapFast", flatMap, [[], [1], [2, 3]], i => {
-    return i + i
-})
+testPerf("flatMapFast", flatMap, [[], [1], [2, 3]], i => i + i)
 
 // => flatMapFast took: 466.762953 milliseconds.
 ```
