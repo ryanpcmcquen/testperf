@@ -4,9 +4,4 @@ const flatMap = require("flatmap-fast")
 const testArr = ["Hi", "World"]
 const splitWord = word => word.split("")
 
-testPerf(
-  "flatMapFast",
-  flatMap,
-  testArr,
-  splitWord
-)
+testPerf("flatMapFast", flatMap, testArr, splitWord)

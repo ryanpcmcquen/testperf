@@ -1,22 +1,16 @@
-/*! testperf v2.0.4 by ryanpcmcquen */
+/*! testperf v2.0.5 by ryanpcmcquen */
 // @flow
 "use strict"
 let now
 try {
-    window.performance &&
-        (now = () => {
-            return window.performance.now()
-        })
+    window.performance && (now = () => window.performance.now())
 } catch (ignore) {
-    now = diff => {
-        return diff ? process.hrtime(diff) : process.hrtime()
-    }
+    now = diff => (diff ? process.hrtime(diff) : process.hrtime())
 }
-const timediff = (end /*:any*/, start) => {
-    // Format `process.hrtime()` to match
-    // `performance.now()` (milliseconds).
-    return typeof start === "number" ? end - start : end[0] * 1e3 + end[1] / 1e6
-}
+// Format `process.hrtime()` to match
+// `performance.now()` (milliseconds).
+const timediff = (end /*:any*/, start) =>
+    typeof start === "number" ? end - start : end[0] * 1e3 + end[1] / 1e6
 
 const testPerf = (name /*:String*/, fn /*:Function*/, ...args) => {
     const start = now()

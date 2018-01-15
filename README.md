@@ -1,4 +1,5 @@
 # testperf
+
 An easy speed test for JavaScript.
 
 Takes 2 arguments (`name`, `function`), and then any additional arguments are passed to the `function` being tested.
@@ -6,9 +7,11 @@ Takes 2 arguments (`name`, `function`), and then any additional arguments are pa
 Example:
 
 ```javascript
-const flatMap = require('flatmap-fast');
+const flatMap = require("flatmap-fast")
 
-testPerf('flatMapFast', flatMap, [[], [1], [2, 3]], (i) => { return i + i; });
+testPerf("flatMapFast", flatMap, [[], [1], [2, 3]], i => {
+    return i + i
+})
 
 // => flatMapFast took: 466.762953 milliseconds.
 ```

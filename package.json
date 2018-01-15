@@ -1,30 +1,26 @@
 {
     "name": "testperf",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "description": "An easy speed/perf test for JavaScript.",
     "main": "index.js",
     "scripts": {
+        "prettier":
+            "npx prettier --config .prettierrc.json --write \"{,!(.git|build|*dist|node_modules|styleguide|test-build)/**/}*.{css,html,js,json,jsx,less,sass,scss,md}\"",
         "test": "node test.js"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ryanpcmcquen/testperf.git"
     },
-    "keywords": [
-        "speedtest",
-        "speed",
-        "test",
-        "perf",
-        "perftest",
-        "testperf"
-    ],
+    "keywords": ["speedtest", "speed", "test", "perf", "perftest", "testperf"],
     "author": "Ryan P.C. McQuen",
     "license": "GPL-2.0+",
     "bugs": {
         "url": "https://github.com/ryanpcmcquen/testperf/issues"
     },
     "devDependencies": {
-        "flatmap-fast": "*"
+        "flatmap-fast": "*",
+        "prettier": "^1.10.2"
     },
     "homepage": "https://github.com/ryanpcmcquen/testperf#readme"
 }
