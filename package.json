@@ -13,7 +13,7 @@
         "url": "git+https://github.com/ryanpcmcquen/testperf.git"
     },
     "keywords": ["speedtest", "speed", "test", "perf", "perftest", "testperf"],
-    "author": "Ryan P.C. McQuen",
+    "author": "Ryan P. C. McQuen",
     "license": "GPL-2.0+",
     "bugs": {
         "url": "https://github.com/ryanpcmcquen/testperf/issues"
